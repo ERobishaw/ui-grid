@@ -1075,7 +1075,7 @@
 
           if ( row.treeLevel <= currentLevel ){
             // pop any levels that aren't parents of this level, formatting the aggregation at the same time
-            while ( row.treeLevel <= currentLevel ){
+            while ( row.treeLevel <= currentLevel && parents.length ){
               var lastParent = parents.pop();
               service.finaliseAggregations( lastParent );
               currentLevel--;
